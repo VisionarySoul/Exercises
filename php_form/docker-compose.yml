@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - php
+
+  php:
+    build: ./php
+    volumes:
+      - ./src:/var/www/html
+      - ./data:/var/www/html/data
+
+  # postgres:
+  #   image: postgres:13
+  #   environment:
+  #     POSTGRES_DB: mydb
+  #     POSTGRES_USER: myuser
+  #     POSTGRES_PASSWORD: mypassword
+  #   volumes:
+  #     - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+  #   ports:
+  #   - "5432:5432"
+
+# volumes:
+#   postgres_data:
