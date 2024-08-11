@@ -19,6 +19,4 @@ docker run -d -p 8080:80 imaginary-discount
 Use code with caution.
 
 Access the application: Open your web browser and go to http://localhost:8080
-That's it! You can now register for discounts.
-
 Note: This is a simple demo application. For production use, consider using a more robust database and secure coupon generation.
